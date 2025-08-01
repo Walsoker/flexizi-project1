@@ -1,11 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlexiPro - Trouver un pro</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome pour les icônes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Votre CSS personnalisé -->
+  <link rel="stylesheet" href="css/history.css">
 </head>
 <body>
-    
+  <header class="header">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg">
+
+         <!-- Bouton Burger (mobile) -->
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+        <!-- Logo -->
+        <a class="navbar-brand logo" href="#">FlexiPro</a>
+
+        <!-- Barre de recherche mobile (NOUVEAU - visible uniquement sur mobile) -->
+        <div class="search-bar-mobile d-lg-none">
+          <input type="text" class="form-control" placeholder="Rechercher...">
+          <button class="btn btn-search"><i class="fas fa-search"></i></button>
+        </div>
+
+        <!-- Contenu du menu (dans le collapse) -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <!-- Liens de navigation -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
+            <li class="nav-item"><a class="nav-link active" href="search.html">Trouver un pro</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Pourquoi FlexiPro ?</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Entreprise</a></li>
+          </ul>
+
+          <!-- Barre de recherche et boutons (alignés à droite) -->
+          <div class="d-flex align-items-center">
+            <div class="search-bar me-3">
+              <input type="text" class="form-control" placeholder="Rechercher...">
+              <button class="btn btn-search"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="buttons">
+              <a href="#" class="btn btn-outline-primary me-2">Connexion</a>
+              <a href="login.html" class="btn btn-primary">S'inscrire</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+
+  <main class="container mt-4">
+    <!-- Barre de filtres Upwork-like -->
+    <div class="search-filters bg-white p-4 rounded-3 shadow-sm mb-4">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <input type="text" class="form-control" placeholder="Métier, mots-clés...">
+        </div>
+        <div class="col-md-3">
+          <select class="form-select">
+            <option>Compétence</option>
+            <option>Plomberie</option>
+            <option>Électricité</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <select class="form-select">
+            <option>Localisation</option>
+            <option>Abidjan</option>
+            <option>Dakar</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-primary w-100">Rechercher</button>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Cartes Pros Style Upwork -->
+    <div class="row row-cols-1 row-cols-lg-3 g-4" id="pros-container">
+      <!-- Carte Exemple 1 (Top Rated) -->
+      <div class="col">
+        <div class="card pro-card h-100 border-0 shadow-sm hover-shadow">
+          <div class="card-header bg-transparent border-0 position-relative">
+            <span class="badge bg-success position-absolute top-0 start-0 m-2">TOP RATED</span>
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle mx-auto d-block mt-3" width="100" alt="Profil">
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title mb-1">Moussa Diop</h5>
+            <p class="text-muted mb-2">Plombier certifié</p>
+            <div class="rating mb-3">
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star-half-alt text-warning"></i>
+              <span class="ms-1">4.8 (56 avis)</span>
+            </div>
+            <p class="card-text">Spécialiste en installation sanitaire avec 10 ans d'expérience.</p>
+            <div class="skills mb-3">
+              <span class="badge bg-light text-dark">Tuyauterie</span>
+              <span class="badge bg-light text-dark">Chauffe-eau</span>
+            </div>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="h5 mb-0">25€/h</span>
+              <button class="btn btn-outline-primary">Contacter</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Carte Exemple 2 (Pro Verified) -->
+      <div class="col">
+        <div class="card pro-card h-100 border-0 shadow-sm hover-shadow">
+          <div class="card-header bg-transparent border-0 position-relative">
+            <span class="badge bg-info position-absolute top-0 start-0 m-2">PRO VERIFIED</span>
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle mx-auto d-block mt-3" width="100" alt="Profil">
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title mb-1">Aïcha Koné</h5>
+            <p class="text-muted mb-2">Électricienne industrielle</p>
+            <div class="rating mb-3">
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-warning"></i>
+              <span class="ms-1">5.0 (42 avis)</span>
+            </div>
+            <p class="card-text">Expert en installations électriques sécurisées pour entreprises.</p>
+            <div class="skills mb-3">
+              <span class="badge bg-light text-dark">Tableau électrique</span>
+              <span class="badge bg-light text-dark">Solaire</span>
+            </div>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="h5 mb-0">35€/h</span>
+              <button class="btn btn-outline-primary">Contacter</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
